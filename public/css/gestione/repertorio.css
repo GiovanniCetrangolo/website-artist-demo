@@ -1,0 +1,48 @@
+.repertorio-item {
+    background-color: #15233f;
+    border-radius: 14px;
+    padding: 2vh 2vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vh;
+}
+
+.repertorio-item .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vh;
+}
+
+.repertorio-item label {
+    color: #c9a44a;
+}
+
+.repertorio-item input {
+    width: 100%;
+    padding: 0.6em;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.repertorio-item button {
+    width: 100%;
+}
+
+
+@media (min-width: 1024px) {
+    .repertorio-item {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .repertorio-item .campo {
+        flex: 1 1 220px;
+    }
+
+    .repertorio-item button {
+        width: auto;
+    }
+}

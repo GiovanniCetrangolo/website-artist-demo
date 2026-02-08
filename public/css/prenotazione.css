@@ -1,0 +1,98 @@
+.contenitore-pagina-prenota {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 4vh;
+}
+
+.titolo-principale {
+    text-align: center;       
+    color: goldenrod;        
+    font-size: clamp(2rem, 5vw, 4rem); 
+    letter-spacing: 0.12em;   
+    font-weight: 400;         
+    margin: 4vh auto 5vh auto; 
+    padding: 0;              
+}
+
+.griglia-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh 2vw;
+}
+
+.campo-form-largo {
+    grid-column: 1 / -1;
+}
+
+.campo-form input,
+.campo-form textarea {
+    width: 100%;
+    padding: 1vh 1vw;
+    font-size: 1em;
+    border: none;
+    border-bottom: 2px solid goldenrod;
+    background: transparent;
+    color: white;
+    box-sizing: border-box;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    outline: none;
+    border-bottom: 0.2vh solid #c9a44a; 
+}
+
+.campo-form input::placeholder,
+.campo-form textarea::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+/* Chrome autofill per il form prenotazioni */
+.campo-form input:-webkit-autofill,
+.campo-form input:-webkit-autofill:hover,
+.campo-form input:-webkit-autofill:focus,
+.campo-form input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: rgb(255, 255, 255);       
+    transition: background-color 5000s ease-in-out 0s;    
+}
+
+.campo-form textarea {
+    min-height: clamp(90px, 20vh, 160px);
+    resize: vertical;
+}
+
+form button {
+    
+    grid-column: 1 / -1;
+     width: 100%;
+
+    box-sizing: border-box;
+    margin: 3vh auto 0;
+    display: block;
+
+    padding: 1vh 3vw;
+    
+    background-color:transparent;
+    border:solid goldenrod;
+    color: white ;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-prenotazione {
+    color: white;
+    background-image: url('/images/photo-1648738672561-51e079480da7.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0.9em;
+    letter-spacing: 0.08em;
+    border: solid goldenrod 0.2vw;
+    padding: 2vh 2vw;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box; 
+}

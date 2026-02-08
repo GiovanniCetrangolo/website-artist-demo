@@ -1,0 +1,73 @@
+
+.tabella-admin {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0 1em; 
+}
+
+.tabella-admin th {
+    display: none; 
+}
+
+.tabella-admin td {
+    display: block;
+    background-color: #0b1a2e;
+    color: #ffffff;
+    padding: 1em;
+    border-radius: 12px;
+    margin-bottom: 1em;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.tabella-admin td:nth-child(1)::before { content: "Nome: "; color: #c9a44a; font-weight: bold; }
+.tabella-admin td:nth-child(2)::before { content: "Email: "; color: #c9a44a; font-weight: bold; }
+.tabella-admin td:nth-child(3)::before { content: "Data Evento: "; color: #c9a44a; font-weight: bold; }
+.tabella-admin td:nth-child(4)::before { content: "Messaggio: "; color: #c9a44a; font-weight: bold; }
+.tabella-admin td:nth-child(5)::before { content: "Azioni: "; color: #c9a44a; font-weight: bold; }
+
+
+.tabella-admin td:nth-child(4) {
+    max-height: 10em;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background-color: #15233f;
+    padding: 0.8em;
+    border-radius: 8px;
+}
+
+
+.tabella-admin td:nth-child(5) button {
+    background-color: #b30000;
+    color: #fff;
+    border: none;
+    padding: 0.6em 1em;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Desktop view */
+@media (min-width: 769px) {
+    .tabella-admin th {
+        display: table-cell;
+        color: #c9a44a;
+        font-weight: bold;
+        text-align: left;
+        padding: 0.8em 1em;
+    }
+
+    .tabella-admin td {
+        display: table-cell;
+        background-color: #15233f;
+        padding: 0.8em 1em;
+        border-radius: 6px;
+    }
+
+    .tabella-admin td:nth-child(4) {
+        max-height: none;
+        overflow: visible;
+    }
+}

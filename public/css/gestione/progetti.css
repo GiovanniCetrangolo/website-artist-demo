@@ -1,0 +1,57 @@
+/* ===== GESTIONE PROGETTI ===== */
+
+.progetto-item {
+    background-color: #15233f;
+    border-radius: 14px;
+    padding: 2vh 2vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+
+.progetto-item .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vh;
+}
+
+.progetto-item label {
+    color: #c9a44a;
+}
+
+.progetto-item input,
+.progetto-item textarea {
+    width: 100%;
+    padding: 0.6em;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.progetto-item textarea {
+    min-height: 6em;
+    resize: vertical;
+}
+
+.progetto-item button {
+    width: 100%;
+}
+
+
+@media (min-width: 1024px) {
+    .progetto-item {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    .progetto-item .campo {
+        flex: 1 1 260px;
+    }
+
+    .progetto-item button {
+        width: auto;
+    }
+}
