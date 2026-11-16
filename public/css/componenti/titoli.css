@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Imperial+Script&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.titolo-principale {
+    font-family: "Imperial Script";
+    text-align: center;
+    color: var(--oro);  
+    font-weight: 1000;       
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.15em;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    font-weight: 400;
+}
+
+.form-title {
+    color: var(--oro);
+    text-shadow: var(--ombra-testo);
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+}
+
+.titolo-sezione {
+    color: var(--oro);
+     text-shadow: var(--ombra-testo);
+    text-align: center;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    letter-spacing: 0.15em;
+}

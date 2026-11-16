@@ -6,20 +6,27 @@
 }
 
 .login-form {
-    width: 50vw;
-    max-width: 50vw;
+    width: 100%;
+    max-width: 600px;
     padding: 4vh 3vw;
-    background-image: url('/images/photo-1472312656035-eeef4726de6c.avif');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), 
+                     url('/images/photo-1472312656035-eeef4726de6c.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
+    color: var(--bianco);
+    box-shadow: var(--ombra-card);
     box-sizing: border-box;
     border-radius: 1vh;
     display: flex;
     flex-direction: column;
     gap: 2vh;
     text-align: center;
+    box-shadow: var(--ombra-card);
+}
+
+.login-form:hover{
+    box-shadow: var(--ombra-card-hover);
 }
 
 .login-form input {
@@ -27,18 +34,18 @@
     padding: 1.5vh 0;                
     font-size: 1rem;
     border: none;                     
-    border-bottom: 0.1vh solid goldenrod; 
+    border-bottom: 0.1vh solid var(--oro); 
     background-color: transparent;    
-    color: white;                     
+    color: var(--bianco); 
+    margin-bottom: 1vh;                    
 }
 
 .login-form input:focus {
     outline: none;                     
-    border-bottom: 0.2vh solid #c9a44a;
+    border-bottom: 0.2vh solid var(--oro);
     background-color: transparent;
 }
 
-/* Chrome autofill */
 .login-form input:-webkit-autofill,
 .login-form input:-webkit-autofill:hover,
 .login-form input:-webkit-autofill:focus,
@@ -49,23 +56,7 @@
 }
 
 .login-form ::placeholder {
-   color: white;
-}
-
-.login-form button {
-    margin: 2vh;
-    padding: 1.5vh 2vw;
-    font-size: 1rem;
-    background-color: gold;
-    color: #041933;
-    border: solid goldenrod;
-    border-radius: 0.5vh;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.login-form button:hover {
-    background-color: #c9a44a;
+   color: var(--bianco);
 }
 
 .email, .password {
@@ -76,7 +67,7 @@
 }
 
 .errore {
-    color: red;
+    color: var(--rosso-chiaro);
     font-size: 0.9rem;
     text-align: left;
 }

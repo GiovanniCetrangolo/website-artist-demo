@@ -18,16 +18,13 @@ class PrenotazioneService
 
     public function creaRichiesta(array $dati): RichiestaPrenotazione
     {
-        // 1️⃣ salva la prenotazione e ottieni l'oggetto Eloquent
         $prenotazione = $this->repository->crea($dati);
 
-        // 2️⃣ invia la mail usando l'indirizzo dal .env
         $destinatario = env('EMAIL_VIOLINISTA', 'default@example.com');
 
         Mail::to($destinatario)
             ->send(new RichiestaPrenotazioneMail($prenotazione));
 
-        // 3️⃣ restituisci l'oggetto
         return $prenotazione;
     }
 

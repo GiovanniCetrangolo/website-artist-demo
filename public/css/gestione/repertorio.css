@@ -1,48 +1,107 @@
-.repertorio-item {
-    background-color: #15233f;
-    border-radius: 14px;
-    padding: 2vh 2vw;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1.2vh;
-}
-
-.repertorio-item .campo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4vh;
-}
-
-.repertorio-item label {
-    color: #c9a44a;
-}
-
-.repertorio-item input {
+.crea-repertorio {
     width: 100%;
-    padding: 0.6em;
-    border-radius: 6px;
-    border: none;
+    max-width: 900px;
+    color: var(--bianco);
+}
+
+.crea-repertorio .form-title,
+.lista-repertorio .form-title {
+    color: var(--oro);
+    margin-bottom: 2vh;
+    letter-spacing: 0.1em;
+}
+
+.form-repertorio {
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2vh 2vw;
+    width: 100%;
+    color: var(--bianco);
+}
+
+.form-repertorio:hover {
+    background-color: var(--blu-medio);
+    box-shadow: var(--ombra-card-hover);
+}
+
+
+.campo-repertorio {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7vh;
+    min-width: 0;
+    text-align: left;
+}
+
+.campo-repertorio label {
+    color: var(--oro);
+    font-size: 0.9rem;
+}
+
+.campo-repertorio input {
+    width: 100%;
     box-sizing: border-box;
+    padding: 1vh 0.8vw;
+    background: transparent;
+    color: var(--bianco);
+    border: none;
+    border-bottom: 2px solid var(--oro);
 }
 
-.repertorio-item button {
+.campo-repertorio input:focus {
+    outline: none;
+    border-bottom-color: var(--bianco);
+}
+
+.form-repertorio .button-submit {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+
+.lista-repertorio {
     width: 100%;
 }
 
+.griglia-repertorio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2vh 2vw;
+    width: 100%;
+}
 
-@media (min-width: 1024px) {
-    .repertorio-item {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
+.card-repertorio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    min-width: 0;
+    padding: 2vh 2vw;
+    background-color: var(--blu-scuro);
+    border-radius: var(--radius-medio);
+    box-shadow: var(--ombra-card);
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.form-elimina-repertorio {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@media (max-width: 700px) {
+
+    .form-repertorio {
+        grid-template-columns: 1fr;
     }
 
-    .repertorio-item .campo {
-        flex: 1 1 220px;
+    .griglia-repertorio {
+        grid-template-columns: 1fr;
     }
 
-    .repertorio-item button {
-        width: auto;
+    .form-elimina-repertorio {
+        justify-content: center;
     }
+
 }

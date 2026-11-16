@@ -57,6 +57,6 @@ return [
     |--------------------------------------------------------------------------
     | Puoi richiamare config('mail.email_violinista') per inviare a questa mail
     */
-    'email_violinista' => env('EMAIL_VIOLINISTA', 'giovacetrangolo@hotmail.it'),
+    'violinista_address' => env('EMAIL_VIOLINISTA'),
 
 ];

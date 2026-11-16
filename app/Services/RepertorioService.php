@@ -1,6 +1,5 @@
 <?php
 
-// App\Services\RepertorioService.php
 namespace App\Services;
 
 use App\Repositories\RepertorioRepository;
@@ -14,7 +13,6 @@ class RepertorioService
         $this->repository = $repository;
     }
 
-    // Restituisce tutti i brani ordinati
     public function elenco()
     {
         return $this->repository->tutti();
@@ -22,11 +20,6 @@ class RepertorioService
 
     public function crea(array $dati)
     {
-        if (isset($dati['immagine'])) {
-    $path = $dati['immagine']->store('progetti', 'public');
-    $dati['immagine'] = $path;
-}
-
         return $this->repository->crea($dati);
     }
 
@@ -35,7 +28,7 @@ class RepertorioService
         return $this->repository->aggiorna($id, $dati);
     }
 
-    public function rimuovi(int $id)
+    public function rimuovi(int $id): void
     {
         $this->repository->elimina($id);
     }

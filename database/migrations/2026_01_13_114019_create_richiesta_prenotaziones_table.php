@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-      Schema::create('richiesta_prenotazioni', function (Blueprint $table) {
-    $table->id();
-    $table->string('nome');
-    $table->string('email');
-    $table->date('data_evento');
-    $table->text('messaggio')->nullable();
-    $table->enum('stato', ['nuovo', 'letto', 'archiviato'])->default('nuovo');
-    $table->timestamps();
-});
-
+        Schema::create('richiesta_prenotazioni', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->string('email');
+            $table->date('data_evento');
+            $table->text('messaggio')->nullable();
+            $table->enum('stato', ['nuovo', 'letto', 'archiviato'])->default('nuovo');
+            $table->timestamps();
+        });
     }
 
     /**

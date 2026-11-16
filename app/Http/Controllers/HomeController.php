@@ -13,10 +13,8 @@ class HomeController extends Controller
         $this->mediaService = $mediaService;
     }
 
-    // mostra view  Homepage
     public function index()
     {
-        // prendiamo i primi 3 media ordinati
         $media = $this->mediaService->elenco()->take(3);
 
         return view('homepage.index', [

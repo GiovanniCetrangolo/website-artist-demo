@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreRepertorioRequest;
+use App\Http\Requests\UpdateRepertorioRequest;
 use App\Services\RepertorioService;
 
 class RepertorioController extends Controller
@@ -14,7 +15,6 @@ class RepertorioController extends Controller
         $this->service = $service;
     }
 
-    // Lato pubblico: elenco diviso per genere
     public function pubblico()
     {
         $repertorio = $this->service->elenco()
@@ -23,30 +23,26 @@ class RepertorioController extends Controller
         return view('repertorio.index', compact('repertorio'));
     }
 
-
-
-    public function crea(Request $request)
+    public function crea(StoreRepertorioRequest $request)
     {
-        $this->service->crea(
-            $request->only(['titolo', 'genere', 'note', 'ordine_index'])
-        );
+        $this->service->crea($request->validated());
 
-        return redirect()->route('admin.repertorio.index');
+        return redirect()->route('admin.gestione');
     }
 
-    public function aggiorna(Request $request, int $id)
+    public function aggiorna(UpdateRepertorioRequest $request, int $id)
     {
         $this->service->aggiorna(
             $id,
-            $request->only(['titolo', 'genere', 'note', 'ordine_index'])
+            $request->validated()
         );
 
-        return redirect()->route('admin.repertorio.index');
+        return redirect()->route('admin.gestione');
     }
 
     public function distruggi(int $id)
     {
         $this->service->rimuovi($id);
-        return redirect()->route('admin.repertorio.index');
+        return redirect()->route('admin.gestione');
     }
 }

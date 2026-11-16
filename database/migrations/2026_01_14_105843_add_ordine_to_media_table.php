@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('media', function (Blueprint $table) {
-            $table->integer('ordine')->default(0)->after('youtube_id');
+            $table->unsignedInteger('ordine')->default(0)->after('youtube_id');
         });
     }
 

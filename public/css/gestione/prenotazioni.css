@@ -1,73 +1,93 @@
-
-.tabella-admin {
-    width: 100%;
-    border-collapse: separate; 
-    border-spacing: 0 1em; 
+.lista-prenotazioni {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2vh 2vw;
+    margin-top: 10px;
 }
 
-.tabella-admin th {
-    display: none; 
+.card-prenotazione {
+    background-color: var(--blu-scuro);
+    color: var(--bianco);
+    padding: 2vh 2vw;
+    border-radius: var(--radius-medio);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    box-shadow: var(--ombra-card);
+    transition-duration: 0.3s;
 }
 
-.tabella-admin td {
-    display: block;
-    background-color: #0b1a2e;
-    color: #ffffff;
-    padding: 1em;
-    border-radius: 12px;
-    margin-bottom: 1em;
-    position: relative;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+.card-prenotazione:hover {
+    background-color: var(--blu-medio);
+    box-shadow: var(--ombra-card-hover);
+    transform: scale(1.1, 1.1);
+    transition-duration: 0.3s;
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1vh;
+}
 
-.tabella-admin td:nth-child(1)::before { content: "Nome: "; color: #c9a44a; font-weight: bold; }
-.tabella-admin td:nth-child(2)::before { content: "Email: "; color: #c9a44a; font-weight: bold; }
-.tabella-admin td:nth-child(3)::before { content: "Data Evento: "; color: #c9a44a; font-weight: bold; }
-.tabella-admin td:nth-child(4)::before { content: "Messaggio: "; color: #c9a44a; font-weight: bold; }
-.tabella-admin td:nth-child(5)::before { content: "Azioni: "; color: #c9a44a; font-weight: bold; }
+.card-nome {
+    font-weight: bold;
+    color: var(--oro);
+    text-shadow: var(--ombra-testo);
+}
 
+.card-data {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
 
-.tabella-admin td:nth-child(4) {
-    max-height: 10em;
-    overflow-y: auto;
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vh;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: var(--oro);
+}
+
+.valore {
+    font-size: 0.9rem;
+}
+
+.messaggio {
     white-space: pre-wrap;
     word-break: break-word;
-    background-color: #15233f;
+    line-height: 1.4;
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 0.8em;
-    border-radius: 8px;
+    border-radius: var(--radius-piccolo);
 }
 
-
-.tabella-admin td:nth-child(5) button {
-    background-color: #b30000;
-    color: #fff;
-    border: none;
-    padding: 0.6em 1em;
-    border-radius: 6px;
-    cursor: pointer;
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
 }
 
-/* Desktop view */
-@media (min-width: 769px) {
-    .tabella-admin th {
-        display: table-cell;
-        color: #c9a44a;
-        font-weight: bold;
-        text-align: left;
-        padding: 0.8em 1em;
+@media (max-width: 700px) {
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5vh;
     }
 
-    .tabella-admin td {
-        display: table-cell;
-        background-color: #15233f;
-        padding: 0.8em 1em;
-        border-radius: 6px;
+    .card-footer {
+        justify-content: center;
     }
 
-    .tabella-admin td:nth-child(4) {
-        max-height: none;
-        overflow: visible;
-    }
 }

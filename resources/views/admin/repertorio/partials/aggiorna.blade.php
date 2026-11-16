@@ -1,34 +1,65 @@
-<div class="item-admin">
-    <form class="form-admin" action="{{ route('admin.repertorio.aggiorna', $brano->id) }}" method="POST">
+<div class="card-repertorio">
+
+    <form
+        class="form-admin-base form-repertorio"
+        action="{{ route('admin.repertorio.aggiorna', $brano->id) }}"
+        method="POST">
+
         @csrf
         @method('PUT')
 
-        <div class="campo">
+        <div class="campo-repertorio">
             <label>Titolo</label>
-            <input type="text" name="titolo" value="{{ $brano->titolo }}">
+            <input
+                type="text"
+                name="titolo"
+                value="{{ $brano->titolo }}"
+                required>
         </div>
 
-        <div class="campo">
+        <div class="campo-repertorio">
             <label>Genere</label>
-            <input type="text" name="genere" value="{{ $brano->genere }}">
+            <input
+                type="text"
+                name="genere"
+                value="{{ $brano->genere }}"
+                required>
         </div>
 
-        <div class="campo">
+        <div class="campo-repertorio">
             <label>Note</label>
-            <input type="text" name="note" value="{{ $brano->note }}">
+            <input
+                type="text"
+                name="note"
+                value="{{ $brano->note }}">
         </div>
 
-        <div class="campo">
+        <div class="campo-repertorio">
             <label>Ordine</label>
-            <input type="number" name="ordine_index" value="{{ $brano->ordine_index }}">
+            <input
+                type="number"
+                name="ordine_index"
+                value="{{ $brano->ordine_index }}">
         </div>
 
-        <button type="submit">Aggiorna</button>
+        <button type="submit" class="button-submit">
+            Aggiorna
+        </button>
+
     </form>
 
-    <form action="{{ route('admin.repertorio.distruggi', $brano->id) }}" method="POST">
+    <form
+        class="form-elimina-repertorio"
+        action="{{ route('admin.repertorio.distruggi', $brano->id) }}"
+        method="POST">
+
         @csrf
         @method('DELETE')
-        <button class="danger" type="submit">Elimina</button>
+
+        <button type="submit" class="button-danger">
+            Elimina
+        </button>
+
     </form>
+
 </div>

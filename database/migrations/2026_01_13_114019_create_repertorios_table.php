@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-      Schema::create('repertori', function (Blueprint $table) {
-    $table->id();
-    $table->string('titolo');
-    $table->string('genere')->nullable();
-    $table->text('note')->nullable();
-    $table->integer('ordine_index')->default(0);
-    $table->timestamps();
-});
-
+        Schema::create('repertori', function (Blueprint $table) {
+            $table->id();
+            $table->string('titolo');
+            $table->string('genere')->nullable();
+            $table->text('note')->nullable();
+            $table->integer('ordine_index')->default(0);
+            $table->timestamps();
+        });
     }
 
     /**

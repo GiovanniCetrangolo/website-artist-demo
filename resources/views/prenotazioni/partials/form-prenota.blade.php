@@ -23,7 +23,7 @@
         @error('messaggio') <small class="errore">{{ $message }}</small> @enderror
     </div>
 
-    <button type="submit">Invia richiesta</button>
+    <button type="submit" class="button-submit">Invia richiesta</button>
     
     </div>
 </form>

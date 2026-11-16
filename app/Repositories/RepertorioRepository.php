@@ -19,13 +19,16 @@ class RepertorioRepository
         return Repertorio::create($dati);
     }
 
-    public function aggiorna(int $id, array $dati)
+    public function aggiorna(int $id, array $dati): Repertorio
     {
-        return Repertorio::where('id', $id)->update($dati);
+        $repertorio = Repertorio::findOrFail($id);
+        $repertorio->update($dati);
+
+        return $repertorio;
     }
 
-    public function elimina(int $id)
+    public function elimina(int $id): void
     {
-        return Repertorio::destroy($id);
+        Repertorio::findOrFail($id)->delete();
     }
 }

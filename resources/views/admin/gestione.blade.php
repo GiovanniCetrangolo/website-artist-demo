@@ -18,13 +18,9 @@
     <section class="blocco-gestione">
         <h2 class="titolo-sezione">Gestione Media</h2>
 
-        <div class="area-form">
             @include('admin.media.partials.crea')
-        </div>
 
-        <div class="area-form">
             @include('admin.media.partials.ordina')
-        </div>
 
         <div class="lista-elementi">
             @include('admin.media.partials.lista')
@@ -34,9 +30,7 @@
     <section class="blocco-gestione">
         <h2 class="titolo-sezione">Gestione Progetti</h2>
 
-        <div class="area-form">
-            @include('admin.progetto.partials.crea')
-        </div>
+        @include('admin.progetto.partials.crea')
 
         <div class="lista-elementi">
             @include('admin.progetto.partials.lista')
@@ -46,9 +40,7 @@
     <section class="blocco-gestione">
         <h2 class="titolo-sezione">Gestione Repertorio</h2>
 
-        <div class="area-form">
             @include('admin.repertorio.partials.crea')
-        </div>
 
         <div class="lista-elementi">
             @include('admin.repertorio.partials.lista')

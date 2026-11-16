@@ -2,7 +2,7 @@
 
 <div class="media-lista">
 @foreach($media as $item)
-    <div class="media-item">
+    <div class="card-admin media-item">
         @if($item->tipo === 'foto')
             <img src="{{ asset('storage/' . $item->percorso_foto) }}">
         @elseif($item->tipo === 'video')
@@ -16,7 +16,7 @@
         <form action="{{ route('admin.media.distruggi', $item->id) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button class="danger" type="submit">Elimina</button>
+            <button class="button-danger" type="submit">Elimina</button>
         </form>
     </div>
 @endforeach

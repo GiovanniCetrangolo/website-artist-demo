@@ -1,0 +1,29 @@
+.button-danger {
+    background-color: var(--rosso-chiaro);
+    color: var(--bianco);
+    border: none;
+    padding: 0.4em;
+    width: 100%;
+    border-radius: var(--radius-piccolo);
+    cursor: pointer;
+}
+
+.button-danger:hover{
+    background-color: var(--rosso-scuro);
+    transform: scale(1, 1.1);
+    transition-duration: 0.3s;
+}
+
+.button-submit{
+    background-color: var(--oro);
+    color: var(--nero);
+    border: none;
+    padding: 0.6em 1.6em;
+    font-weight: bold;
+    border-radius: var(--radius-piccolo);
+    cursor: pointer;
+}
+
+.button-submit:hover {
+    background-color: var(--oro-scuro);
+}

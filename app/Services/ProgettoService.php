@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use App\Models\Progetto;
 use App\Repositories\ProgettoRepository;
+use Illuminate\Support\Facades\Storage;
 
 class ProgettoService
 {
@@ -18,22 +20,33 @@ class ProgettoService
         return $this->repository->tutti();
     }
 
-    public function crea(array $dati)
+    public function crea(array $dati): Progetto
     {
-        // Se esiste un file immagine, lo salviamo nello storage
-        if (isset($dati['immagine']) && $dati['immagine']) {
-            $path = $dati['immagine']->store('progetti', 'public');
-            $dati['immagine'] = $path;
+        if (isset($dati['immagine'])) {
+            $dati['immagine'] = $dati['immagine']
+                ->store('progetti', 'public');
         }
 
         return $this->repository->crea($dati);
     }
 
-    public function aggiorna(int $id, array $dati)
+    public function aggiorna(int $id, array $dati): Progetto
     {
-        if (isset($dati['immagine']) && $dati['immagine']) {
-            $path = $dati['immagine']->store('progetti', 'public');
-            $dati['immagine'] = $path;
+        $progetto = $this->repository->trova($id);
+
+        if (isset($dati['immagine'])) {
+            $vecchiaImmagine = $progetto->immagine;
+
+            $dati['immagine'] = $dati['immagine']
+                ->store('progetti', 'public');
+
+            $progettoAggiornato = $this->repository->aggiorna($id, $dati);
+
+            if ($vecchiaImmagine) {
+                Storage::disk('public')->delete($vecchiaImmagine);
+            }
+
+            return $progettoAggiornato;
         }
 
         return $this->repository->aggiorna($id, $dati);
@@ -41,6 +54,12 @@ class ProgettoService
 
     public function elimina(int $id): void
     {
+        $progetto = $this->repository->trova($id);
+
         $this->repository->elimina($id);
+
+        if ($progetto->immagine) {
+            Storage::disk('public')->delete($progetto->immagine);
+        }
     }
 }

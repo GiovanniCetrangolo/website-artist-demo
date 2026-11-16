@@ -1,0 +1,7 @@
+.card-admin {
+    background-color: var(--blu-scuro);
+    border-radius: var(--radius-medio);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

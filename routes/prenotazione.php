@@ -10,7 +10,7 @@ Route::get('/prenota', [PrenotazioneController::class, 'prenota'])
 Route::post('/prenota', [PrenotazioneController::class, 'invia'])
     ->name('prenotazioni.invia');
 
-// admin (temporaneamente senza auth)
+//Lato Admin
 Route::middleware('auth')
     ->prefix('admin')
     

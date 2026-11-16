@@ -19,7 +19,7 @@ class MediaService
     }
 
     public function aggiungi(array $dati, $file = null)
-{
+    {
     if ($dati['tipo'] === 'foto' && $file) {
         $path = $file->store('media', 'public');
         $dati['percorso_foto'] = $path;
@@ -31,8 +31,7 @@ class MediaService
     }
 
     return $this->repository->crea($dati);
-}
-
+    }
 
     public function rimuovi(int $id): void
     {

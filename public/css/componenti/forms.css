@@ -1,0 +1,75 @@
+.form-admin-base {
+    width: 100%;
+    background-color: var(--blu-scuro);
+    padding: 2vh 2vw;
+    border-radius: var(--radius-medio);
+    display: flex;
+    gap: 1.5vh 1.5vw;
+}
+
+.form-admin-base label {
+    color: var(--oro);
+    text-shadow: var(--ombra-testo);
+    font-size: 0.85rem;
+}
+
+.form-admin-base input,
+.form-admin-base select,
+.form-admin-base textarea {
+    padding: 0.5em;
+    border-radius: var(--radius-piccolo);
+    border: none;
+    font-size: 0.9rem;
+    max-width: 80%;
+}
+
+.form-colonna {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-wrap {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-con-campi .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vh;
+}
+
+.form-repertorio input {
+    width: 350px;
+    max-width: 80%;
+}
+
+.form-progetti {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+.form-progetti label {
+    align-self: center;
+}
+
+.form-progetti input,
+.form-progetti textarea {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+
+    .form-admin-base {
+        flex-direction: column;
+        gap: 1vh;
+        justify-content: center;
+    }
+
+}

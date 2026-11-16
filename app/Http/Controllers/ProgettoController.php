@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreProgettoRequest;
+use App\Http\Requests\UpdateProgettoRequest;
 use App\Services\ProgettoService;
 
 class ProgettoController extends Controller
@@ -14,47 +15,38 @@ class ProgettoController extends Controller
         $this->service = $service;
     }
 
-    // cliente - lista
     public function pubblico()
     {
         $progetti = $this->service->elenco();
         return view('progetto.index', compact('progetti'));
     }
 
+    public function crea(StoreProgettoRequest $request)
+    {
+        $dati = $request->validated();
 
-    // Admin - crea
-  public function crea(Request $request)
-{
-    $dati = $request->validate([
-        'titolo' => 'required|string|max:255',
-        'descrizione' => 'nullable|string',
-        'immagine' => 'nullable|mimes:jpg,jpeg,png,webp,avif|max:2048',
-    ]);
+        if ($request->hasFile('immagine')) {
+            $dati['immagine'] = $request->file('immagine');
+        }
 
-    if ($request->hasFile('immagine')) {
-        $dati['immagine'] = $request->file('immagine');
+        $this->service->crea($dati);
+
+        return redirect()->back();
     }
 
-    $this->service->crea($dati);
-
-    return redirect()->back();
-}
-
-
-    // Admin - aggiorna
-    public function aggiorna(Request $request, int $id)
+    public function aggiorna(UpdateProgettoRequest $request, int $id)
     {
-        $dati = $request->validate([
-            'titolo' => 'required|string|max:255',
-            'descrizione' => 'nullable|string',
-        ]);
+        $dati = $request->validated();
+
+        if ($request->hasFile('immagine')) {
+            $dati['immagine'] = $request->file('immagine');
+        }
 
         $this->service->aggiorna($id, $dati);
 
         return redirect()->back();
     }
 
-    // Admin - elimina
     public function distruggi(int $id)
     {
         $this->service->elimina($id);

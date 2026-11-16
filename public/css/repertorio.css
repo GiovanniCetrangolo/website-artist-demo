@@ -1,19 +1,16 @@
-.titolo-principale {
-    text-align: center;       
-    color: goldenrod;        
-    font-size: clamp(2rem, 5vw, 4rem); 
-    letter-spacing: 0.12em;   
-    font-weight: 400;         
-    margin: 4vh auto 5vh auto; 
-    padding: 0;              
-}
- 
 .titolo-genere {
-    color: #c9a44a;
+    color: var(--oro);
     letter-spacing: 0.15em;
     margin-bottom: 3vh;
-    font-size: calc(2.5vh + 0.8vw);
+    margin-top: 3vh;
+    font-size: 1.2rem;
     text-align: center;
+}
+
+.titolo-genere:hover {
+    transform: rotate(5deg);
+    transition-duration: 1s;
+    color: var(--oro-scuro);
 }
 
 .brano {
@@ -22,18 +19,37 @@
     justify-content: center;
     gap: 1.5vh;
 
-    background-color: #0b1a2e;
-    color: #ffffff;
+    background-color: var(--blu-scuro);
+    color: var(--bianco);
+    transition-duration: 0.3s;
+
+    box-shadow: var(--ombra-card);
 
     margin: 1vh auto;
     padding: 1.2vh 3vw;
 
-    border-radius: 0.6vh;
-    max-width: 70vw;
-    font-size: calc(1.8vh + 0.6vw);
+    border-radius: var(--radius-piccolo);
+    width: 60%;
+    font-size: 0.9rem;
+}
+
+.brano:hover {
+    background-color: var(--blu-medio);
 }
 
 .icona-nota {
-    color: #c9a44a;
-    font-size: calc(2vh + 0.4vw);
+    color: var(--oro);
+    font-size: 1rem;
+}
+
+.brano:hover .icona-nota {
+    transform: rotate(360deg);
+    transition-duration: 2s;
+}
+
+
+@media (max-width: 700px) {
+    .brano {
+        width: 90%;
+    }
 }

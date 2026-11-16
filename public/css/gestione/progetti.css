@@ -1,15 +1,10 @@
-/* ===== GESTIONE PROGETTI ===== */
-
 .progetto-item {
-    background-color: #15233f;
-    border-radius: 14px;
-    padding: 2vh 2vw;
-
+    gap: 1.5vh;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    gap: 1.5vh;
+    justify-content: center;
 }
-
 
 .progetto-item .campo {
     display: flex;
@@ -18,12 +13,12 @@
 }
 
 .progetto-item label {
-    color: #c9a44a;
+    color: var(--oro);
 }
 
 .progetto-item input,
 .progetto-item textarea {
-    width: 100%;
+    max-width:100%;
     padding: 0.6em;
     border-radius: 6px;
     border: none;
@@ -41,17 +36,7 @@
 
 
 @media (min-width: 1024px) {
-    .progetto-item {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-end;
-    }
-
-    .progetto-item .campo {
+    .form-admin .campo {
         flex: 1 1 260px;
-    }
-
-    .progetto-item button {
-        width: auto;
     }
 }

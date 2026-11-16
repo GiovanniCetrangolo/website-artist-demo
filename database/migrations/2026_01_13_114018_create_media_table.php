@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('media', function (Blueprint $table) {
-    $table->id();
-    $table->enum('tipo', ['foto', 'video']);
-    $table->string('percorso_foto')->nullable();
-    $table->string('youtube_id')->nullable();
-    $table->timestamps();
-});
-
+        Schema::create('media', function (Blueprint $table) {
+            $table->id();
+            $table->enum('tipo', ['foto', 'video']);
+            $table->string('percorso_foto')->nullable();
+            $table->string('youtube_id')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**

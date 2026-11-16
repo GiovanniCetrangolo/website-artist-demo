@@ -1,49 +1,3 @@
-
-.form-admin {
-    background-color: #15233f;
-    padding: 2vh 2vw;
-    border-radius: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5vh 1.5vw;
-    align-items: flex-end;
-}
-
-/* Campi */
-.form-admin .campo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4vh;
-}
-
-/* Label */
-.form-admin label {
-    color: #c9a44a;
-    font-size: 0.85rem;
-}
-
-/* Input */
-.form-admin input,
-.form-admin select {
-    padding: 0.5em;
-    border-radius: 6px;
-    border: none;
-    font-size: 0.9rem;
-}
-
-/* Bottone */
-.form-admin button {
-    background-color: #c9a44a;
-    color: #0b1a2e;
-    border: none;
-    padding: 0.6em 1.6em;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* ===== LISTA MEDIA ===== */
-
 .media-lista {
     display: flex;
     flex-wrap: wrap;
@@ -51,81 +5,65 @@
     justify-content: center;
 }
 
-/* Card media */
 .media-item {
-    background-color: #15233f;
-    border-radius: 12px;
-    padding: 1vh;
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    gap: 1vh;
-    align-items: center;
+    width: 400px;
+    gap: 1rem;
 }
 
-/* Media (foto/video) */
 .media-item img,
 .media-item iframe {
     width: 100%;
-    max-height: 120px;
+    max-height: auto;
     object-fit: cover;
     border-radius: 6px;
-    border: 1px solid #c9a44a;
+    border: 1px solid var(--oro);
 }
 
-/* Bottone elimina */
-.media-item button.danger {
-    background-color: #b30000;
-    color: #fff;
-    border: none;
-    padding: 0.4em;
-    width: 100%;
-    border-radius: 6px;
-    cursor: pointer;
+.media-item img:hover,
+.media-item iframe:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 0.3s;
 }
-
-/* ===== ORDINA MEDIA ===== */
 
 .ordina-media-item {
-    background-color: #15233f;
-    border-radius: 12px;
-    padding: 1vh;
     width: 180px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6vh;
-    align-items: center;
+    gap: 0.6rem;
 }
 
-/* Miniature ordina (CHIAVE DEL PROBLEMA) */
 .ordina-media-item img,
 .ordina-media-item iframe {
     width: 100%;
-    height: 90px;
+    height: auto;
     object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid #c9a44a;
+    border-radius: var(--radius-piccolo);
+    border: 1px solid var(--oro);
 }
 
-/* Input ordine */
+.ordina-media-item img:hover,
+.ordina-media-item iframe:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 0.3s;
+}
+
 .ordina-media-item input {
     width: 60px;
     text-align: center;
+    max-width: 80%;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .media-item,
     .ordina-media-item {
-        width: 90%;
-    }
-
-    .form-admin {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .form-admin button {
         width: 100%;
+        height: auto;
     }
+
+    .media-item img,
+.media-item iframe {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--oro);
+}
 }

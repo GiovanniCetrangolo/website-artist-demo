@@ -17,30 +17,24 @@ class PrenotazioneController extends Controller
         $this->service = $service;
     }
 
-    // mostra pagina prenota
     public function prenota()
     {
         return view('prenotazioni.prenota');
     }
 
-    // invia richiesta di prenotazione
-   public function invia(InviaPrenotazioneRequest $request)
-{
-    // Salva la prenotazione e invia la mail dal service
-    $this->service->creaRichiesta($request->validated());
+    public function invia(InviaPrenotazioneRequest $request)
+    {
+        $this->service->creaRichiesta($request->validated());
 
-    // Torna indietro con messaggio di successo
-    return back()->with('success', 'Richiesta inviata correttamente');
-}
+        return back()->with('success', 'Richiesta inviata correttamente');
+    }
 
-    // elenco prenotazioni (admin)
     public function elenco()
     {
         $prenotazioni = $this->service->elencoRichieste();
         return view('admin.prenotazioni.index', compact('prenotazioni'));
     }
 
-    // elimina prenotazione (admin)
     public function elimina(int $id)
     {
         $this->service->eliminaRichiesta($id);

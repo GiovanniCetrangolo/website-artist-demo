@@ -1,10 +1,10 @@
 <h3 class="form-title">Ordina media</h3>
 
-<form class="form-admin" action="{{ route('admin.media.ordina') }}" method="POST">
+<form class="form-admin-base form-wrap" action="{{ route('admin.media.ordina') }}" method="POST">
     @csrf
 
     @foreach ($media as $m)
-        <div class="campo ordina-media-item">
+        <div class="card-admin ordina-media-item">
             <label>Media #{{ $m->id }}</label>
             
             @if($m->tipo === 'foto')
@@ -22,5 +22,5 @@
         </div>
     @endforeach
 
-    <button type="submit">Salva ordine</button>
+    <button type="submit" class="button-submit">Salva ordine</button>
 </form>

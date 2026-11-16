@@ -3,19 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Progetto extends Model
 {
-   protected $table = 'progetti';
- 
-   protected $fillable = [
+    use HasFactory;
+
+    protected $table = 'progetti';
+
+    protected $fillable = [
         'titolo',
         'descrizione',
         'immagine',
     ];
-
-    public function media()
-    {
-        return $this->hasMany(Media::class);
-    }
 }
